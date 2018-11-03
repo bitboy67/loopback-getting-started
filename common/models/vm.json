@@ -1,0 +1,289 @@
+{
+  "name": "vm",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "app_role": {
+      "type": "string"
+    },
+    "backup": {
+      "type": "string"
+    },
+    "backup_sla": {
+      "type": "string"
+    },
+    "data_class": {
+      "type": "string"
+    },
+    "dp_env": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "host_os": {
+      "type": "string"
+    },
+    "host_size": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "fqdn": {
+      "type": "string"
+    },
+    "ip": {
+      "type": "string"
+    },
+    "cloud": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "backup_sla_assigned": {
+      "type": "string"
+    },
+    "inst_no": {
+      "type": "number"
+    },
+    "op_window": {
+      "type": "string"
+    },
+    "req_email": {
+      "type": "string"
+    },
+    "support_team": {
+      "type": "string"
+    },
+    "vm_loc": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "provision_date": {
+      "type": "string"
+    },
+    "stage_infoblox": {
+      "type": "boolean"
+    },
+    "stage_provision": {
+      "type": "boolean"
+    },
+    "stage_illumio": {
+      "type": "boolean"
+    },
+    "stage_sccm": {
+      "type": "boolean"
+    },
+    "stage_satellite": {
+      "type": "boolean"
+    },
+    "win_guid": {
+      "type": "string"
+    },
+    "win_mac": {
+      "type": "string"
+    },
+    "vm_uuid": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "image_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "vmupdate": {
+      "accepts": [
+        {
+          "arg": "vmname",
+          "type": "string",
+          "required": true,
+          "description": "Hostname"
+        },
+        {
+          "arg": "data",
+          "type": "object",
+          "required": true,
+          "description": "Data Object containing fields to update"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Update Active VM by Hostname",
+      "http": [
+        {
+          "path": "/vmupdate",
+          "verb": "post"
+        }
+      ]
+    },
+    "provision": {
+      "accepts": [
+        {
+          "arg": "vm_data",
+          "type": "object",
+          "required": true,
+          "description": "Ansible Variables"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Provision a VM",
+      "http": [
+        {
+          "path": "/provision",
+          "verb": "post"
+        }
+      ]
+    },
+    "generateHostNames": {
+      "accepts": [
+        {
+          "arg": "env",
+          "type": "string",
+          "required": true,
+          "description": "VM Environment"
+        },
+        {
+          "arg": "os",
+          "type": "string",
+          "required": true,
+          "description": "VM OS"
+        },
+        {
+          "arg": "loc",
+          "type": "string",
+          "required": true,
+          "description": "VM Location"
+        },
+        {
+          "arg": "cloud",
+          "type": "string",
+          "required": true,
+          "description": "VM Cloud"
+        },
+        {
+          "arg": "app_id",
+          "type": "string",
+          "required": true,
+          "description": "VM App ID"
+        },
+        {
+          "arg": "vm_number",
+          "type": "number",
+          "required": true,
+          "description": "Number of VMs"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "Response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Generate Hostname for VM",
+      "http": [
+        {
+          "path": "/generateHostNames",
+          "verb": "post"
+        }
+      ]
+    },
+    "syncAnsibleInventory": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Sync Cirrus DB with Ansible inventory",
+      "http": [
+        {
+          "path": "/syncAnsibleInventory",
+          "verb": "get"
+        }
+      ]
+    },
+    "datatables": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default response"
+        }
+      ],
+      "description": "Get All VMs in format that Datatables likes",
+      "http": [
+        {
+          "path": "/datatables",
+          "verb": "get"
+        }
+      ]
+    }
+  }
+}

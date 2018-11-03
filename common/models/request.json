@@ -1,0 +1,108 @@
+{
+  "name": "request",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "any"
+    },
+    "priority": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string"
+    },
+    "assignee": {
+      "type": "string"
+    },
+    "requestor": {
+      "type": "string"
+    },
+    "reporter": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "createJiraRequest": {
+      "accepts": [
+        {
+          "arg": "summary",
+          "type": "string",
+          "required": true,
+          "description": "Summary"
+        },
+        {
+          "arg": "description",
+          "type": "any",
+          "required": true,
+          "description": "Description"
+        },
+        {
+          "arg": "reporter",
+          "type": "string",
+          "required": true,
+          "description": "Reporter"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Create a JIRA Request",
+      "http": [
+        {
+          "path": "/createJiraRequest",
+          "verb": "post"
+        }
+      ]
+    },
+    "deleteAllRequests": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Delete all Requests",
+      "http": [
+        {
+          "path": "/deleteAllRequests",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

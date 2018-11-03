@@ -4,7 +4,8 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -13,30 +14,67 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
+  "accessToken": {
+    "dataSource": "localmongo",
+    "public": true
   },
-  "AccessToken": {
-    "dataSource": "db",
+  "user": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "userCredential": {
+    "dataSource": "localmongo",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "localmongo",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "localmongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "localmongo",
+    "public": true
   },
   "Role": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "vm": {
+    "dataSource": "localmongo",
+    "public": true
   },
   "application": {
     "dataSource": "localmongo",
     "public": true
   },
+  "ip": {
+    "dataSource": "localmongo",
+    "public": true
+  },
   "database": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "lb": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "job": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "request": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "certificate": {
+    "dataSource": "localmongo",
+    "public": true
+  },
+  "vmspec": {
     "dataSource": "localmongo",
     "public": true
   }

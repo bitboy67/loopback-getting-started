@@ -1,0 +1,161 @@
+{
+  "name": "certificate",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "csr": {
+      "type": "string"
+    },
+    "clientKey": {
+      "type": "string"
+    },
+    "x509Cert": {
+      "type": "string"
+    },
+    "PKCS7Cert": {
+      "type": "string"
+    },
+    "rootCert": {
+      "type": "string"
+    },
+    "intermediateCert": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "locality": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "host": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string"
+    },
+    "endDate": {
+      "type": "string"
+    },
+    "serialNumber": {
+      "type": "string",
+      "id": true
+    },
+    "orderID": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {
+    "generatecert": {
+      "accepts": [
+        {
+          "arg": "country",
+          "type": "string",
+          "required": true,
+          "description": "Country"
+        },
+        {
+          "arg": "state",
+          "type": "string",
+          "required": true,
+          "description": "State"
+        },
+        {
+          "arg": "locality",
+          "type": "string",
+          "required": true,
+          "description": "Locality"
+        },
+        {
+          "arg": "organization",
+          "type": "string",
+          "required": true,
+          "description": "Organization"
+        },
+        {
+          "arg": "emailAddress",
+          "type": "string",
+          "required": true,
+          "description": "Email Address"
+        },
+        {
+          "arg": "host",
+          "type": "string",
+          "required": true,
+          "description": "Host"
+        },
+        {
+          "arg": "domain",
+          "type": "string",
+          "required": true,
+          "description": "Domain"
+        },
+        {
+          "arg": "firstName",
+          "type": "string",
+          "required": true,
+          "description": "First Name"
+        },
+        {
+          "arg": "lastName",
+          "type": "string",
+          "required": true,
+          "description": "Last Name"
+        },
+        {
+          "arg": "phone",
+          "type": "string",
+          "required": true,
+          "description": "Phone"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "response",
+          "type": "object",
+          "root": true,
+          "description": "Default Response"
+        }
+      ],
+      "description": "Generate Cert for nsw.education domain",
+      "http": [
+        {
+          "path": "/generatecert",
+          "verb": "post"
+        }
+      ]
+    }
+  }
+}

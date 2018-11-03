@@ -1,0 +1,119 @@
+{
+  "name": "vmspec",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "cirrus_userId": {
+      "type": "string"
+    },
+    "app_id": {
+      "type": "string"
+    },
+    "app_role": {
+      "type": "string"
+    },
+    "backup": {
+      "type": "string"
+    },
+    "backup_sla": {
+      "type": "string"
+    },
+    "data_class": {
+      "type": "string"
+    },
+    "dp_env": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "host_os": {
+      "type": "string"
+    },
+    "host_size": {
+      "type": "string"
+    },
+    "hostname": {
+      "type": "string"
+    },
+    "fqdn": {
+      "type": "string"
+    },
+    "ip": {
+      "type": "string"
+    },
+    "cloud": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "os": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "backup_sla_assigned": {
+      "type": "string"
+    },
+    "inst_no": {
+      "type": "number"
+    },
+    "op_window": {
+      "type": "string"
+    },
+    "req_email": {
+      "type": "string"
+    },
+    "support_team": {
+      "type": "string"
+    },
+    "vm_loc": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "provision_date": {
+      "type": "string"
+    },
+    "stage_infoblox": {
+      "type": "boolean"
+    },
+    "stage_provision": {
+      "type": "boolean"
+    },
+    "stage_illumio": {
+      "type": "boolean"
+    },
+    "stage_sccm": {
+      "type": "boolean"
+    },
+    "stage_satellite": {
+      "type": "boolean"
+    },
+    "win_guid": {
+      "type": "string"
+    },
+    "win_mac": {
+      "type": "string"
+    },
+    "vm_uuid": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

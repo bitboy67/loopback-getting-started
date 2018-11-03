@@ -1,0 +1,73 @@
+{
+    "name": "lb",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "app_id": {
+        "type": "string"
+      },
+      "dp_env": {
+        "type": "string"
+      },
+      "lb_cloud": {
+        "type": "string"
+      },
+      "lb_loc": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "master_hostname": {
+        "type": "string"
+      },
+      "master_ip": {
+        "type": "string"
+      },
+      "slave_hostname": {
+        "type": "string"
+      },
+      "slave_ip": {
+        "type": "string"
+      },
+      "vip_ip": {
+        "type": "string"
+      },
+      "vip_hostname": {
+        "type": "string"
+      },
+      "acc_corpwan": {
+        "type": "string"
+      },
+      "acc_noncorpwan": {
+        "type": "string"
+      },
+      "acc_dclan": {
+        "type": "string"
+      },
+      "provision_date": {
+        "type": "string"
+      }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "Admin",
+        "permission": "ALLOW"
+      },
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+      }
+    ],
+    "methods": {}
+  }
+  
