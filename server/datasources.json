@@ -9,7 +9,7 @@
     "url": "",
     "database": "cirrusdb",
     "password": "cirrus123",
-    "name": "newmongo",
+    "name": "localmongo",
     "user": "cirrus",
     "connector": "mongodb"
   }
