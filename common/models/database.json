@@ -1,0 +1,103 @@
+{
+    "name": "database",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "app_id": {
+        "type": "string"
+      },
+      "backup": {
+        "type": "string"
+      },
+      "full_name": {
+        "type": "string"
+      },
+      "backup_sla": {
+        "type": "string"
+      },
+      "data_class": {
+        "type": "string"
+      },
+      "dp_env": {
+        "type": "string"
+      },
+      "db_inst_size": {
+        "type": "string"
+      },
+      "server_name": {
+        "type": "string"
+      },
+      "db_name": {
+        "type": "string"
+      },
+      "db_multi_az": {
+        "type": "string"
+      },
+      "cloud": {
+        "type": "string"
+      },
+      "location": {
+        "type": "string"
+      },
+      "db_type": {
+        "type": "string"
+      },
+      "environment": {
+        "type": "string"
+      },
+      "backup_sla_assigned": {
+        "type": "string"
+      },
+      "op_window": {
+        "type": "string"
+      },
+      "req_email": {
+        "type": "string"
+      },
+      "support_team": {
+        "type": "string"
+      },
+      "db_loc": {
+        "type": "string"
+      },
+      "db_lictype": {
+        "type": "string"
+      },
+      "active": {
+        "type": "boolean"
+      },
+      "provision_date": {
+        "type": "string"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "Admin",
+        "permission": "ALLOW"
+      },
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$everyone",
+        "permission": "ALLOW"
+      }
+    ],
+    "methods": {}
+  }
+  

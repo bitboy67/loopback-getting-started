@@ -1,0 +1,106 @@
+{
+  "name": "application",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "supportname": {
+      "type": "string",
+      "required": true
+    },
+    "supportemail": {
+      "type": "string",
+      "required": true
+    },
+    "sapcode": {
+      "type": "string"
+    },
+    "mon_pduty_team_id": {
+      "type": "string"
+    },
+    "mon_pduty_service_id": {
+      "type": "string"
+    },
+    "mon_pduty_slack_extension_id": {
+      "type": "string"
+    },
+    "mon_pduty_zabbix_integration_id": {
+      "type": "string"
+    },
+    "mon_slack_channel_id": {
+      "type": "string"
+    },
+    "mon_grafana_folder_id": {
+      "type": "string"
+    },
+    "mon_grafana_board_id": {
+      "type": "string"
+    },
+    "mon_grafana_board_url": {
+      "type": "string"
+    },
+    "mon_zabbix_dev_hostgroup_id": {
+      "type": "string"
+    },
+    "mon_zabbix_test_hostgroup_id": {
+      "type": "string"
+    },
+    "mon_zabbix_prod_hostgroup_id": {
+      "type": "string"
+    },
+    "mon_zabbix_dev_autoreg_action_id": {
+      "type": "string"
+    },
+    "mon_zabbix_test_autoreg_action_id": {
+      "type": "string"
+    },
+    "mon_zabbix_prod_autoreg_action_id": {
+      "type": "string"
+    },
+    "mon_zabbix_dev_user_id": {
+      "type": "string"
+    },
+    "mon_zabbix_test_user_id": {
+      "type": "string"
+    },
+    "mon_zabbix_prod_user_id": {
+      "type": "string"
+    },
+    "mon_zabbix_dev_trigger_action_id": {
+      "type": "string"
+    },
+    "mon_zabbix_test_trigger_action_id": {
+      "type": "string"
+    },
+    "mon_zabbix_prod_trigger_action_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "Admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
