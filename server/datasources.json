@@ -8,9 +8,9 @@
     "port": 27017,
     "url": "",
     "database": "cirrusdb",
-    "password": "cirrus123",
+    "password": "c1rrus!",
     "name": "localmongo",
-    "user": "cirrus",
+    "user": "cirrus_usr",
     "connector": "mongodb"
   }
 }
